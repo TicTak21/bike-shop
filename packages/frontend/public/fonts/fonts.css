@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'Futura PT';
+  src: url(./FuturaPT/FuturaPT-Medium.woff);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Futura PT';
+  src: url(./FuturaPT/FuturaPT-Bold.woff);
+  font-weight: 700;
+}
