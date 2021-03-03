@@ -44,12 +44,12 @@ const Header = () => {
           <Text color="white" fontSize={['xl', 'xl', '2xl', '2xl']} textTransform="uppercase">
             {data.name}
           </Text>
-          <Box mt="10px">
+          <Box mt={1}>
             {data.promos.map((p, i) => (
               <Title key={i}>{p}</Title>
             ))}
           </Box>
-          <PlainButton type="outline" mt="25px" textTransform="uppercase">
+          <PlainButton type="outline" mt={4} textTransform="uppercase">
             <Link href={data.url}>узнать больше</Link>
           </PlainButton>
         </Box>

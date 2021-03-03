@@ -1,4 +1,4 @@
-import { Flex, Input, Image, InputGroup, InputLeftElement } from '@chakra-ui/react';
+import { Flex, Input, Image, InputGroup, InputLeftElement, Button } from '@chakra-ui/react';
 import Logo from './Logo';
 import Link from 'next/link';
 
@@ -14,14 +14,19 @@ const Nav: React.FC<NavProps> = () => {
           pointerEvents="none"
           children={<Image src="/icons/Search/search.svg" />}
         />
-        <Input type="text" bg="white" borderRadius="20px" />
+        <Input type="text" bg="white" borderRadius="20px" placeholder="Find your new bike..." />
       </InputGroup>
 
       <Flex justifyContent="space-between" alignItems="center" gridGap={4}>
-        <Link href="/cart">
-          <Image src="/icons/Cart/cart.svg" cursor="pointer" />
-        </Link>
-        <Image src="/icons/Menu/menu.svg" cursor="pointer" />
+        <Button variant="link">
+          <Link href="/cart">
+            <Image src="/icons/Cart/cart.svg" cursor="pointer" />
+          </Link>
+        </Button>
+
+        <Button variant="link" py={1}>
+          <Image src="/icons/Menu/menu.svg" cursor="pointer" />
+        </Button>
       </Flex>
     </Flex>
   );
