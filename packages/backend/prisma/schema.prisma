@@ -8,47 +8,47 @@ datasource db {
 }
 
 model categories {
-  category_id     String            @id @db.VarChar(32)
+  category_id     String            @id @default(uuid())
   name            String            @unique @db.VarChar(100)
-  created_at      DateTime          @db.DateTime(0)
-  updated_at      DateTime?         @db.DateTime(0)
+  created_at      DateTime          @default(now())
+  updated_at      DateTime?         @updatedAt
   url_slug        String?           @db.VarChar(100)
   description     String?           @db.Text
-  sabcategory_id  String            @db.VarChar(32)
+  sabcategory_id  String            @default(uuid())
   category_images category_images[]
   products        products[]
   subcategories   subcategories[]
 }
 
 model category_images {
-  category_image_id String     @id @db.VarChar(32)
-  created_at        DateTime   @db.DateTime(0)
-  updated_at        DateTime?  @db.DateTime(0)
+  category_image_id String     @id @default(uuid())
+  created_at        DateTime   @default(now())
+  updated_at        DateTime?  @updatedAt
   image             Bytes?
-  category_id       String     @db.VarChar(32)
+  category_id       String     @default(uuid())
   categories        categories @relation(fields: [category_id], references: [category_id])
 
   @@index([category_id], name: "fk_category_images_categories1_idx")
 }
 
 model orders {
-  order_id    String    @id @db.VarChar(32)
-  created_at  DateTime  @db.DateTime(0)
-  update_at   DateTime? @db.DateTime(0)
+  order_id    String    @id @default(uuid())
+  created_at  DateTime  @default(now())
+  update_at   DateTime? @updatedAt
   total_price Float?    @default(0) @db.Float
   users       users[]
 }
 
 model products {
-  product_id     String           @id @db.VarChar(32)
-  created_at     DateTime         @db.DateTime(0)
-  updated_at     DateTime?        @db.DateTime(0)
+  product_id     String           @id @default(uuid())
+  created_at     DateTime         @default(now())
+  updated_at     DateTime?        @updatedAt
   name           String           @db.VarChar(255)
-  price          Float?           @db.Float
+  price          Float?           @default(0) @db.Float
   description    String?          @db.Text
   url_slug       String?          @db.VarChar(100)
-  category_id    String           @db.VarChar(32)
-  subcategory_id String           @db.VarChar(32)
+  category_id    String           @default(uuid())
+  subcategory_id String           @default(uuid())
   categories     categories       @relation(fields: [category_id], references: [category_id])
   subcategories  subcategories    @relation(fields: [subcategory_id], references: [subcategory_id])
   product_images product_images[]
@@ -58,24 +58,24 @@ model products {
 }
 
 model product_images {
-  product_image_id String    @id @db.VarChar(32)
-  created_at       DateTime  @db.DateTime(0)
-  updated_at       DateTime? @db.DateTime(0)
+  product_image_id String    @id @default(uuid())
+  created_at       DateTime  @default(now())
+  updated_at       DateTime? @updatedAt
   image            Bytes?
-  product_id       String    @db.VarChar(32)
+  product_id       String    @default(uuid())
   products         products  @relation(fields: [product_id], references: [product_id])
 
   @@index([product_id], name: "fk_product_images_products1_idx")
 }
 
 model subcategories {
-  subcategory_id     String               @id @db.VarChar(32)
-  created_at         DateTime             @db.DateTime(0)
-  updated_at         DateTime?            @db.DateTime(0)
+  subcategory_id     String               @id @default(uuid())
+  created_at         DateTime             @default(now())
+  updated_at         DateTime?            @updatedAt
   name               String               @db.VarChar(100)
   url_slug           String?              @db.VarChar(100)
   description        String?              @db.Text
-  parent_category_id String               @db.VarChar(32)
+  parent_category_id String               @default(uuid())
   categories         categories           @relation(fields: [parent_category_id], references: [category_id])
   products           products[]
   subcategory_images subcategory_images[]
@@ -84,25 +84,25 @@ model subcategories {
 }
 
 model subcategory_images {
-  subcategory_image_id String        @id @db.VarChar(32)
-  created_at           DateTime      @db.DateTime(0)
-  updated_at           DateTime?     @db.DateTime(0)
+  subcategory_image_id String        @id @default(uuid())
+  created_at           DateTime      @default(now())
+  updated_at           DateTime?     @updatedAt
   image                Bytes?
-  subcategory_id       String        @db.VarChar(32)
+  subcategory_id       String        @default(uuid())
   subcategories        subcategories @relation(fields: [subcategory_id], references: [subcategory_id])
 
   @@index([subcategory_id], name: "fk_subcategory_images_subcategories1_idx")
 }
 
 model users {
-  user_id       String        @id @db.VarChar(32)
+  user_id       String        @id @default(uuid())
   username      String?       @db.VarChar(16)
   email         String        @unique @db.VarChar(100)
   password_hash String        @db.VarChar(100)
-  created_at    DateTime      @db.DateTime(0)
-  updated_at    DateTime?     @db.DateTime(0)
+  created_at    DateTime      @default(now())
+  updated_at    DateTime?     @updatedAt
   role          String        @db.VarChar(20)
-  order_id      String        @db.VarChar(32)
+  order_id      String        @default(uuid())
   orders        orders        @relation(fields: [order_id], references: [order_id])
   user_images   user_images[]
 
@@ -110,11 +110,11 @@ model users {
 }
 
 model user_images {
-  user_image_id String    @id @db.VarChar(32)
+  user_image_id String    @id @default(uuid())
   image         String?   @db.VarChar(45)
-  created_at    DateTime  @db.DateTime(0)
-  updated_at    DateTime? @db.DateTime(0)
-  user_id       String    @db.VarChar(32)
+  created_at    DateTime  @default(now())
+  updated_at    DateTime? @updatedAt
+  user_id       String    @default(uuid())
   users         users     @relation(fields: [user_id], references: [user_id])
 
   @@index([user_id], name: "fk_user_images_users1_idx")
