@@ -24,7 +24,7 @@ const Header = () => {
       }
 
       setCurrentSlide(currentSlide + 1);
-    }, 5000);
+    }, 8000);
 
     return () => clearInterval(timer);
   });

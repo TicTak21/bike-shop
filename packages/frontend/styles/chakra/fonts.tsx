@@ -7,6 +7,14 @@ export const Fonts = () => (
       @font-face {
         font-family: 'Futura PT';
         font-style: normal;
+        font-weight: 300;
+        font-display: swap;
+        src: url('/fonts/Futura-PT/FuturaPT-Light.woff') format('woff');
+      }
+
+      @font-face {
+        font-family: 'Futura PT';
+        font-style: normal;
         font-weight: 400;
         font-display: swap;
         src: url('/fonts/Futura-PT/FuturaPT-Medium.woff') format('woff');
@@ -18,6 +26,14 @@ export const Fonts = () => (
         font-weight: 700;
         font-display: swap;
         src: url('/fonts/Futura-PT/FuturaPT-Bold.woff') format('woff');
+      }
+
+      @font-face {
+        font-family: 'Futura PT';
+        font-style: normal;
+        font-weight: 900;
+        font-display: swap;
+        src: url('/fonts/Futura-PT/FuturaPT-Heavy.woff') format('woff');
       }
       `}
   />
