@@ -1,6 +1,10 @@
 {
   "name": "root",
   "private": true,
+  "scripts": {
+    "dev:front": "yarn workspace frontend dev",
+    "dev:back": "yarn workspace backend start:dev"
+  },
   "devDependencies": {
     "husky": "^4.3.8",
     "lerna": "^3.20.2"
