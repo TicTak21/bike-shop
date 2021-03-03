@@ -1,0 +1,121 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model categories {
+  category_id     String            @id @db.VarChar(32)
+  name            String            @unique @db.VarChar(100)
+  created_at      DateTime          @db.DateTime(0)
+  updated_at      DateTime?         @db.DateTime(0)
+  url_slug        String?           @db.VarChar(100)
+  description     String?           @db.Text
+  sabcategory_id  String            @db.VarChar(32)
+  category_images category_images[]
+  products        products[]
+  subcategories   subcategories[]
+}
+
+model category_images {
+  category_image_id String     @id @db.VarChar(32)
+  created_at        DateTime   @db.DateTime(0)
+  updated_at        DateTime?  @db.DateTime(0)
+  image             Bytes?
+  category_id       String     @db.VarChar(32)
+  categories        categories @relation(fields: [category_id], references: [category_id])
+
+  @@index([category_id], name: "fk_category_images_categories1_idx")
+}
+
+model orders {
+  order_id    String    @id @db.VarChar(32)
+  created_at  DateTime  @db.DateTime(0)
+  update_at   DateTime? @db.DateTime(0)
+  total_price Float?    @default(0) @db.Float
+  users       users[]
+}
+
+model products {
+  product_id     String           @id @db.VarChar(32)
+  created_at     DateTime         @db.DateTime(0)
+  updated_at     DateTime?        @db.DateTime(0)
+  name           String           @db.VarChar(255)
+  price          Float?           @db.Float
+  description    String?          @db.Text
+  url_slug       String?          @db.VarChar(100)
+  category_id    String           @db.VarChar(32)
+  subcategory_id String           @db.VarChar(32)
+  categories     categories       @relation(fields: [category_id], references: [category_id])
+  subcategories  subcategories    @relation(fields: [subcategory_id], references: [subcategory_id])
+  product_images product_images[]
+
+  @@index([category_id], name: "fk_products_categories1_idx")
+  @@index([subcategory_id], name: "fk_products_subcategories1_idx")
+}
+
+model product_images {
+  product_image_id String    @id @db.VarChar(32)
+  created_at       DateTime  @db.DateTime(0)
+  updated_at       DateTime? @db.DateTime(0)
+  image            Bytes?
+  product_id       String    @db.VarChar(32)
+  products         products  @relation(fields: [product_id], references: [product_id])
+
+  @@index([product_id], name: "fk_product_images_products1_idx")
+}
+
+model subcategories {
+  subcategory_id     String               @id @db.VarChar(32)
+  created_at         DateTime             @db.DateTime(0)
+  updated_at         DateTime?            @db.DateTime(0)
+  name               String               @db.VarChar(100)
+  url_slug           String?              @db.VarChar(100)
+  description        String?              @db.Text
+  parent_category_id String               @db.VarChar(32)
+  categories         categories           @relation(fields: [parent_category_id], references: [category_id])
+  products           products[]
+  subcategory_images subcategory_images[]
+
+  @@index([parent_category_id], name: "fk_subcategories_categories1_idx")
+}
+
+model subcategory_images {
+  subcategory_image_id String        @id @db.VarChar(32)
+  created_at           DateTime      @db.DateTime(0)
+  updated_at           DateTime?     @db.DateTime(0)
+  image                Bytes?
+  subcategory_id       String        @db.VarChar(32)
+  subcategories        subcategories @relation(fields: [subcategory_id], references: [subcategory_id])
+
+  @@index([subcategory_id], name: "fk_subcategory_images_subcategories1_idx")
+}
+
+model users {
+  user_id       String        @id @db.VarChar(32)
+  username      String?       @db.VarChar(16)
+  email         String        @unique @db.VarChar(100)
+  password_hash String        @db.VarChar(100)
+  created_at    DateTime      @db.DateTime(0)
+  updated_at    DateTime?     @db.DateTime(0)
+  role          String        @db.VarChar(20)
+  order_id      String        @db.VarChar(32)
+  orders        orders        @relation(fields: [order_id], references: [order_id])
+  user_images   user_images[]
+
+  @@index([order_id], name: "fk_users_orders_idx")
+}
+
+model user_images {
+  user_image_id String    @id @db.VarChar(32)
+  image         String?   @db.VarChar(45)
+  created_at    DateTime  @db.DateTime(0)
+  updated_at    DateTime? @db.DateTime(0)
+  user_id       String    @db.VarChar(32)
+  users         users     @relation(fields: [user_id], references: [user_id])
+
+  @@index([user_id], name: "fk_user_images_users1_idx")
+}

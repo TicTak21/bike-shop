@@ -37,6 +37,7 @@
     "@types/supertest": "^2.0.10",
     "jest": "^24.9.0",
     "prettier": "^2.2.1",
+    "prisma": "^2.18.0",
     "supertest": "^4.0.2",
     "ts-jest": "^25.5.1",
     "ts-loader": "^7.0.5",
