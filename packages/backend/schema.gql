@@ -1,0 +1,21 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type UserModel {
+  userId: ID!
+  username: String
+  email: String!
+  password_hash: String!
+  createdAt: String!
+  updatedAt: String!
+  role: String!
+  orderId: String!
+  order: String!
+  userImages: [String!]!
+  userToken: String!
+}
+
+type Query {
+  users: [UserModel!]!
+}
