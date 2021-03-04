@@ -50,7 +50,7 @@ model UserToken {
   userId    String    @default(uuid())
   user      User      @relation(fields: [userId], references: [userId])
 
-  @@index([userId], name: "fk_user_images_users1_idx")
+  @@index([userId], name: "fk_user_token_users1_idx")
 }
 
 model Product {
@@ -61,6 +61,8 @@ model Product {
   price         Float?         @default(0) @db.Float
   description   String?        @db.Text
   urlSlug       String?        @db.VarChar(100)
+  views         Int            @default(0) @db.MediumInt
+  rating        Int            @default(0) @db.MediumInt
   categoryId    String         @default(uuid())
   subcategoryId String         @default(uuid())
   categories    Category       @relation(fields: [categoryId], references: [categoryId])
