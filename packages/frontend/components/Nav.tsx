@@ -1,11 +1,17 @@
-import { Flex, Image, Button } from '@chakra-ui/react';
+import { Flex, useDisclosure } from '@chakra-ui/react';
 import Logo from './Logo';
 import Search from './Search/Search';
-import Link from 'next/link';
+import Drawer from './Drawer/Drawer';
+import CartButton from './Cart/CartButton';
+import MenuButton from './Drawer/MenuButton';
+import { useRef } from 'react';
 
 export interface NavProps {}
 
 const Nav: React.FC<NavProps> = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const btnRef = useRef();
+
   return (
     <Flex justifyContent="space-between" alignItems="center" flexWrap="wrap" gridGap={4}>
       <Logo />
@@ -13,15 +19,10 @@ const Nav: React.FC<NavProps> = () => {
       <Search text="" />
 
       <Flex justifyContent="space-between" alignItems="center" gridGap={4}>
-        <Button variant="link">
-          <Link href="/cart">
-            <Image src="/icons/Cart/cart.svg" cursor="pointer" />
-          </Link>
-        </Button>
+        <CartButton />
+        <MenuButton btnRef={btnRef} onClick={onOpen} />
 
-        <Button variant="link" py={1}>
-          <Image src="/icons/Menu/menu.svg" cursor="pointer" />
-        </Button>
+        <Drawer onClose={onClose} isOpen={isOpen} finalRef={btnRef} />
       </Flex>
     </Flex>
   );
