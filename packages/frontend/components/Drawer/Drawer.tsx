@@ -15,9 +15,7 @@ import CartButton from '../Cart/CartButton';
 import CloseButton from './CloseButton';
 import LangButton from '../Lang/LangButton';
 import Categorie from '../Categories/Categorie';
-import { SiInstagram } from 'react-icons/si';
-import { ImFacebook } from 'react-icons/im';
-import { FaTelegramPlane } from 'react-icons/fa';
+import Social from '../Social/Social';
 
 export interface DrawerProps {
   isOpen: boolean;
@@ -50,30 +48,20 @@ const Drawer: React.FC<DrawerProps> = ({ isOpen, onClose, finalRef }) => {
           </DrawerHeader>
 
           <DrawerBody mt={6}>
-            <Stack spacing={2}>
-              {data.categories.map((c, i) => (
-                <Categorie name={c.name} key={i} />
-              ))}
-            </Stack>
+            <Stack spacing={8}>
+              <Stack spacing={2}>
+                {data.categories.map((c, i) => (
+                  <Categorie name={c.name} key={i} />
+                ))}
+              </Stack>
 
-            <Stack mt={8}>
-              <Link href="/news">Новости</Link>
-              <Link href="/about">О нас</Link>
-              <Link href="/contacts">Контакты</Link>
-            </Stack>
+              <Stack>
+                <Link href="/news">Новости</Link>
+                <Link href="/about">О нас</Link>
+                <Link href="/contacts">Контакты</Link>
+              </Stack>
 
-            <Stack mt={8} alignItems="center" direction="row" fontSize="lg">
-              <Link>
-                <SiInstagram />
-              </Link>
-
-              <Link>
-                <ImFacebook />
-              </Link>
-
-              <Link>
-                <FaTelegramPlane />
-              </Link>
+              <Social mediaList={['instagram', 'facebook', 'telegram', 'twitter']} />
             </Stack>
           </DrawerBody>
 
