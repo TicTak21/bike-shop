@@ -63,10 +63,10 @@ model Product {
   urlSlug       String?        @db.VarChar(100)
   views         Int            @default(0) @db.MediumInt
   rating        Int            @default(0) @db.MediumInt
-  categoryId    String         @default(uuid())
   subcategoryId String         @default(uuid())
-  categories    Category       @relation(fields: [categoryId], references: [categoryId])
   subcategory   Subcategory    @relation(fields: [subcategoryId], references: [subcategoryId])
+  categoryId    String         @default(uuid())
+  category      Category       @relation(fields: [categoryId], references: [categoryId])
   productImages ProductImage[]
 
   @@index([categoryId], name: "fk_products_categories1_idx")
@@ -118,8 +118,8 @@ model User {
   createdAt     DateTime    @default(now())
   updatedAt     DateTime    @updatedAt
   role          String      @db.VarChar(20)
-  orderId       String      @default(uuid())
-  order         Order       @relation(fields: [orderId], references: [orderId])
+  orderId       String?     @default(uuid())
+  order         Order?      @relation(fields: [orderId], references: [orderId])
   userImages    UserImage[]
   userToken     UserToken?
 
