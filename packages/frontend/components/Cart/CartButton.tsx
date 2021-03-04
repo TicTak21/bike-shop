@@ -1,5 +1,5 @@
 import { Button } from '@chakra-ui/react';
-import Link from 'next/link';
+import Link from '../Link';
 import { CartIcon } from '../../public/icons/Cart/CartIcon';
 
 export interface CardButtonProps {

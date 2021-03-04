@@ -8,14 +8,14 @@ import {
   Text,
   Flex,
   Stack,
-  Link,
 } from '@chakra-ui/react';
 import { RefObject } from 'react';
 import CartButton from '../Cart/CartButton';
 import CloseButton from './CloseButton';
 import LangButton from '../Lang/LangButton';
-import Categorie from '../Categories/Categorie';
+import CategoryTitle from '../Categories/CategoryTitle';
 import Social from '../Social/Social';
+import Link from '../Link';
 
 export interface DrawerProps {
   isOpen: boolean;
@@ -51,7 +51,7 @@ const Drawer: React.FC<DrawerProps> = ({ isOpen, onClose, finalRef }) => {
             <Stack spacing={8}>
               <Stack spacing={2}>
                 {data.categories.map((c, i) => (
-                  <Categorie name={c.name} key={i} />
+                  <CategoryTitle name={c.name} key={i} />
                 ))}
               </Stack>
 

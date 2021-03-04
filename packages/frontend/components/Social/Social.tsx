@@ -1,7 +1,8 @@
-import { Stack, Link } from '@chakra-ui/react';
+import { Stack } from '@chakra-ui/react';
 import { SiInstagram } from 'react-icons/si';
 import { ImFacebook } from 'react-icons/im';
 import { FaTelegramPlane, FaTwitter } from 'react-icons/fa';
+import Link from '../Link';
 
 export interface SocialProps {
   mediaList: string[];
