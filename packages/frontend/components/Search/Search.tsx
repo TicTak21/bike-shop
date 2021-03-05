@@ -1,5 +1,6 @@
-import { Input, Image, InputGroup, InputLeftElement, Box } from '@chakra-ui/react';
+import { Input, InputGroup, InputLeftElement, Box } from '@chakra-ui/react';
 import { useState } from 'react';
+import { SearchIcon } from '../../public/icons/Search/SearchIcon';
 import SearchItem from './SearchItem';
 
 export interface SearchProps {
@@ -20,10 +21,7 @@ const Search: React.FC<SearchProps> = ({ text }) => {
     <Box position="relative" w="400px" display={['none', 'none', 'block', 'block']}>
       <Box>
         <InputGroup>
-          <InputLeftElement
-            pointerEvents="none"
-            children={<Image src="/icons/Search/search.svg" />}
-          />
+          <InputLeftElement pointerEvents="none" children={<SearchIcon />} />
           <Input
             type="text"
             bg="white"
