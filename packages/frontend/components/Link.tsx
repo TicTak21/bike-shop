@@ -9,8 +9,10 @@ interface LinkProps extends GeneralLinkProps {
 }
 
 const Link: React.FC<LinkProps> = ({ children, href, ...props }) => {
+  const formattedHref = href.replace(/\s/g, '-');
+
   return (
-    <ChakraLink href={href} {...props}>
+    <ChakraLink href={formattedHref} {...props}>
       {children}
     </ChakraLink>
   );

@@ -2,12 +2,12 @@ import { Box } from '@chakra-ui/layout';
 
 export interface LayoutProps {
   children: React.ReactNode;
-  style?: { [key: string]: any };
+  [key: string]: unknown;
 }
 
-const Layout: React.FC<LayoutProps> = ({ children, style }) => {
+const Layout: React.FC<LayoutProps> = ({ children, ...rest }) => {
   return (
-    <Box maxW="1440px" px="4.8%" py="2%" style={{ ...style }}>
+    <Box maxW="1440px" px="4.8%" py="2%" {...rest}>
       {children}
     </Box>
   );

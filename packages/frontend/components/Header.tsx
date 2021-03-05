@@ -8,54 +8,59 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 
 const Header = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentItem, setCurrentItem] = useState(0);
 
-  const data = {
-    name: 'streetster nathan',
-    url: '/',
-    images: ['/img/Header/Header-1.png', '/img/Header/Header-2.png'],
-    promos: ['Удобный и быстрый', 'Твой идеал для покорения города'],
-  };
+  const data = [
+    {
+      name: 'streetster nathan',
+      url: '/streetster nathan',
+      image: '/img/Header/Header-1.png',
+      promos: ['Удобный и быстрый', 'Твой идеал для покорения города'],
+    },
+    {
+      name: 'streetster offroad',
+      url: '/streetster offroad',
+      image: '/img/Header/Header-2.png',
+      promos: ['Твой выбор для бездорожья'],
+    },
+  ];
 
   useEffect(() => {
     const timer = setInterval(() => {
-      if (currentSlide + 1 >= data.images.length) {
-        setCurrentSlide(0);
+      if (currentItem + 1 >= data.length) {
+        setCurrentItem(0);
         return;
       }
 
-      setCurrentSlide(currentSlide + 1);
+      setCurrentItem(currentItem + 1);
     }, 8000);
 
     return () => clearInterval(timer);
   });
 
   return (
-    <Box h="100vh" position="relative">
+    <Box h="100vh">
       <Box position="fixed" zIndex={-1} w="100vw" h="100vh" overflow="hidden">
-        <Image
-          src={data.images[currentSlide]}
-          alt=""
-          layout="fill"
-          objectFit="cover"
-          quality={100}
-        />
+        <Image src={data[currentItem].image} alt="" layout="fill" objectFit="cover" quality={100} />
       </Box>
-      <Layout style={{ height: 'inherit', position: 'relative' }}>
+      <Layout>
         <Nav />
 
         <Box position="absolute" bottom="20%">
           <Text color="white" fontSize={['xl', 'xl', '2xl', '2xl']} textTransform="uppercase">
-            {data.name}
+            {data[currentItem].name}
           </Text>
           <Box mt={1}>
-            {data.promos.map((p, i) => (
+            {data[currentItem].promos.map((p, i) => (
               <Title key={i}>{p}</Title>
             ))}
           </Box>
-          <PlainButton type="outline" mt={4} textTransform="uppercase">
-            <Link href={data.url}>узнать больше</Link>
-          </PlainButton>
+
+          <Link href={data[currentItem].url}>
+            <PlainButton type="outline" mt={4} textTransform="uppercase">
+              узнать больше
+            </PlainButton>
+          </Link>
         </Box>
       </Layout>
     </Box>

@@ -5,15 +5,8 @@ export interface CategoryTitleProps {
 }
 
 const CategoryTitle: React.FC<CategoryTitleProps> = ({ name }) => {
-  const formattedName = name.replaceAll(' ', '-');
-
   return (
-    <Link
-      href={`/categories/${formattedName}`}
-      textTransform="uppercase"
-      fontWeight="700"
-      fontSize="xl"
-    >
+    <Link href={`/categories/${name}`} textTransform="uppercase" fontWeight="700" fontSize="xl">
       {name}
     </Link>
   );

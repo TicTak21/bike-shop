@@ -18,8 +18,10 @@ const Social: React.FC<SocialProps> = ({ mediaList }) => {
 
   return (
     <Stack alignItems="center" direction="row" fontSize="lg">
-      {mediaList.map((el) => (
-        <Link href={`/${el}`}>{media[el]}</Link>
+      {mediaList.map((el, i) => (
+        <Link href={`/${el}`} key={i}>
+          {media[el]}
+        </Link>
       ))}
     </Stack>
   );
