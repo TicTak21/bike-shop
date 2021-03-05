@@ -2,6 +2,23 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type ProductModel {
+  productId: ID!
+  createdAt: String!
+  updatedAt: String!
+  name: String!
+  price: Float!
+  description: String!
+  urlSlug: String!
+  views: Float!
+  rating: Float!
+  subcategoryId: String
+  subcategory: String
+  categoryId: String
+  category: String
+  productImages: String!
+}
+
 type UserModel {
   userId: ID!
   username: String
@@ -19,4 +36,6 @@ type UserModel {
 type Query {
   users: [UserModel!]!
   user(id: String!): UserModel
+  prodcuts: [ProductModel!]!
+  product(id: String!): ProductModel
 }

@@ -58,15 +58,15 @@ model Product {
   createdAt     DateTime       @default(now())
   updatedAt     DateTime       @updatedAt
   name          String         @db.VarChar(255)
-  price         Float?         @default(0) @db.Float
+  price         Float          @default(0) @db.Float
   description   String?        @db.Text
   urlSlug       String?        @db.VarChar(100)
   views         Int            @default(0) @db.MediumInt
   rating        Int            @default(0) @db.MediumInt
-  subcategoryId String         @default(uuid())
-  subcategory   Subcategory    @relation(fields: [subcategoryId], references: [subcategoryId])
-  categoryId    String         @default(uuid())
-  category      Category       @relation(fields: [categoryId], references: [categoryId])
+  subcategoryId String?        @default(uuid())
+  subcategory   Subcategory?   @relation(fields: [subcategoryId], references: [subcategoryId])
+  categoryId    String?        @default(uuid())
+  category      Category?      @relation(fields: [categoryId], references: [categoryId])
   productImages ProductImage[]
 
   @@index([categoryId], name: "fk_products_categories1_idx")
