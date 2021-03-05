@@ -18,4 +18,5 @@ type UserModel {
 
 type Query {
   users: [UserModel!]!
+  user(id: String!): UserModel
 }
