@@ -5,6 +5,7 @@ import PlainButton from './PlainButton';
 import Title from './Title';
 import Link from './Link';
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 const Header = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -30,13 +31,16 @@ const Header = () => {
   });
 
   return (
-    <Box
-      h="100vh"
-      bgImage={`url(${data.images[currentSlide]})`}
-      bgPosition="center center"
-      bgRepeat="no-repeat"
-      bgSize="cover"
-    >
+    <Box h="100vh" position="relative">
+      <Box position="fixed" zIndex={-1} w="100vw" h="100vh" overflow="hidden">
+        <Image
+          src={data.images[currentSlide]}
+          alt=""
+          layout="fill"
+          objectFit="cover"
+          quality={100}
+        />
+      </Box>
       <Layout style={{ height: 'inherit', position: 'relative' }}>
         <Nav />
 
