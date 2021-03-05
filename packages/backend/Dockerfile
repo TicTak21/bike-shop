@@ -23,6 +23,6 @@ COPY --chown=node:node --from=builder /home/node/packages/backend/dist/ /home/no
 
 RUN yarn install --frozen-lockfile --silent
 
-EXPOSE 3333
+EXPOSE 4000
 
 CMD ["yarn", "start:prod"]
