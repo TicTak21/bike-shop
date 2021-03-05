@@ -1,7 +1,8 @@
 import { Module } from '@nestjs/common';
-import { MysqlConnectionService } from './mysql-connection/mysql-connection.service';
+import { PrismaService } from './prisma/prisma/prisma.service';
 
 @Module({
-  providers: [MysqlConnectionService]
+  providers: [PrismaService],
+  exports: [PrismaService],
 })
 export class DbModule {}
