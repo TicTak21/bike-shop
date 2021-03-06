@@ -7,7 +7,7 @@ export interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children, ...rest }) => {
   return (
-    <Box maxW="1440px" px="4.8%" py="2%" {...rest}>
+    <Box maxW="1440px" px="4.8%" py="2%" {...rest} m="0 auto">
       {children}
     </Box>
   );
