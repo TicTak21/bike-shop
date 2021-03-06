@@ -1,9 +1,9 @@
 import { Box, Text } from '@chakra-ui/react';
-import Nav from './Nav';
-import Layout from './Layout';
-import PlainButton from './PlainButton';
-import Title from './Title';
-import Link from './Link';
+import Nav from '../Nav';
+import Layout from '../Layout';
+import PlainButton from '../PlainButton';
+import Title from '../Title';
+import Link from '../Link';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 
