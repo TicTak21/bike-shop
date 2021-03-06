@@ -46,7 +46,7 @@ const Header = () => {
       <Layout>
         <Nav />
 
-        <Box position="absolute" bottom="20%">
+        <Box position="absolute" bottom="10%">
           <Text color="white" fontSize={['xl', 'xl', '2xl', '2xl']} textTransform="uppercase">
             {data[currentItem].name}
           </Text>
