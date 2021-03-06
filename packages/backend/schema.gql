@@ -36,6 +36,6 @@ type UserModel {
 type Query {
   users: [UserModel!]!
   user(id: String!): UserModel
-  prodcuts: [ProductModel!]!
+  products: [ProductModel!]!
   product(id: String!): ProductModel
 }

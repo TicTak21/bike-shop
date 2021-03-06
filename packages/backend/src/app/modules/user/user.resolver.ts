@@ -1,5 +1,5 @@
 import { Resolver, Query, Args } from '@nestjs/graphql';
-import { PrismaService } from '../db/prisma/prisma/prisma.service';
+import { PrismaService } from '../db/prisma/prisma.service';
 import { UserModel } from './models/user.model';
 
 @Resolver((of) => UserModel)
