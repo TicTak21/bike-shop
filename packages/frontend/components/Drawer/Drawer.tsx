@@ -65,7 +65,7 @@ const Drawer: React.FC<DrawerProps> = ({ isOpen, onClose, finalRef }) => {
             </Stack>
           </DrawerBody>
 
-          <DrawerFooter>Streetster 2021</DrawerFooter>
+          <DrawerFooter justifyContent="flex-start">Streetster 2021</DrawerFooter>
         </DrawerContent>
       </DrawerOverlay>
     </ChakraDrawer>
