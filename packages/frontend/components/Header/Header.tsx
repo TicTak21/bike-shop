@@ -39,8 +39,8 @@ const Header = () => {
   });
 
   return (
-    <Box h="100vh">
-      <Box position="fixed" zIndex={-1} w="100vw" h="100vh" overflow="hidden">
+    <Box as="header" h="100vh" position="relative">
+      <Box position="absolute" zIndex={-1} w="100vw" h="100vh">
         <Image src={data[currentItem].image} alt="" layout="fill" objectFit="cover" quality={100} />
       </Box>
       <Layout>
