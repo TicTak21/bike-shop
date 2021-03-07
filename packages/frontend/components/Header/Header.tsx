@@ -1,7 +1,7 @@
 import { Box, Text } from '@chakra-ui/react';
 import Nav from '../Nav';
 import Layout from '../Layout';
-import PlainButton from '../PlainButton';
+import ActionButton from '../Button/ActionButton';
 import Title from '../Title';
 import Link from '../Link';
 import { useEffect, useState } from 'react';
@@ -57,9 +57,9 @@ const Header = () => {
           </Box>
 
           <Link href={data[currentItem].url}>
-            <PlainButton type="outline" mt={4} textTransform="uppercase">
+            <ActionButton variant="plain" mt={4} textTransform="uppercase">
               узнать больше
-            </PlainButton>
+            </ActionButton>
           </Link>
         </Box>
       </Layout>
