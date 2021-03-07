@@ -1,5 +1,7 @@
 # Bike-shop backend
 
+![](https://img.shields.io/github/checks-status/TicTak21/bike-shop/dev?label=build) [![codecov](https://codecov.io/gh/TicTak21/bike-shop/branch/dev/graph/badge.svg?token=QH7jjIYBv3)](https://codecov.io/gh/TicTak21/bike-shop)
+
 ## Tech Stack
 
 ### Core
