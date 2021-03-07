@@ -16,7 +16,7 @@ const Nav: React.FC<NavProps> = () => {
     <Flex justifyContent="space-between" alignItems="center" flexWrap="wrap" gridGap={4}>
       <Logo />
 
-      <Search text="" />
+      <Search />
 
       <Flex justifyContent="space-between" alignItems="center" gridGap={4}>
         <CartButton />

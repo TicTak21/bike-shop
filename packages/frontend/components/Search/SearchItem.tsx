@@ -1,9 +1,10 @@
 import { Box, Text, Flex, Image } from '@chakra-ui/react';
+import Link from '../Link';
 
 export interface SearchItemProps {
-  name: string;
-  price: number;
-  image: string;
+  name?: string;
+  price?: number;
+  image?: string;
 }
 
 const SearchItem: React.FC<SearchItemProps> = ({ name, price, image }) => {
@@ -23,12 +24,14 @@ const SearchItem: React.FC<SearchItemProps> = ({ name, price, image }) => {
       _last={{ borderBottomRadius: '20px' }}
       _hover={{ bg: '#D4D4D4' }}
     >
+      {image && (
+        <Box>
+          <Image src={image} />
+        </Box>
+      )}
       <Box>
-        <Image src={image} />
-      </Box>
-      <Box>
-        <Text textTransform="uppercase">{name}</Text>
-        <Text fontWeight="300">{price}₴</Text>
+        {name && <Text textTransform="uppercase">{name}</Text>}
+        {price && <Text fontWeight="300">{price}₴</Text>}
       </Box>
     </Flex>
   );
