@@ -24,7 +24,7 @@ const SearchItem: React.FC<SearchItemProps> = ({ name, price, image }) => {
       _last={{ borderBottomRadius: '20px' }}
       _hover={{ bg: '#D4D4D4' }}
     >
-      <Link href={`/${name}`} w="inherit" h="inherit">
+      <Link href={`/${name}`} w="inherit" h="inherit" style={{ textDecoration: 'none' }}>
         <Flex>
           {image && (
             <Box>

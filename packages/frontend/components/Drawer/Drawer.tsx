@@ -61,7 +61,9 @@ const Drawer: React.FC<DrawerProps> = ({ isOpen, onClose, finalRef }) => {
                 <Link href="/contacts">Контакты</Link>
               </Stack>
 
-              <Social mediaList={['instagram', 'facebook', 'telegram', 'twitter']} />
+              <Social
+                mediaList={['instagram', 'facebook', 'telegram', 'twitter', 'dribbble', 'tiktok']}
+              />
             </Stack>
           </DrawerBody>
 
