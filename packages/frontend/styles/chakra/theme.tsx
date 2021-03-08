@@ -5,6 +5,7 @@ export const theme = extendTheme({
     global: {
       'html, body': {
         fontSize: '18px',
+        overflowX: 'hidden',
       },
     },
   },
