@@ -6,15 +6,19 @@ import SearchItem from './SearchItem';
 const Search = () => {
   const data = {
     results: [
-      { name: 'steetster nathan', price: 12000, image: '/img/Search/Search-1.png' },
+      { name: 'streetster nathan', price: 12000, image: '/img/Search/Search-1.png' },
       { name: 'road nathan', price: 8000, image: '/img/Search/Search-1.png' },
-      { name: 'mountain nathan', price: 10000, image: '/img/Search/Search-2.png' },
+      { name: 'mountain nathan', price: 10000 },
+      { name: 'streetster nathan 2', price: 13000 },
     ],
   };
 
-  const [isFocused, setIsFocused] = useState(false);
-  const [searchvalue, setSearchvalue] = useState('');
-  const [searchMatch, setSearchMatch] = useState<unknown[]>(data.results.slice(0, 3));
+  const [isFocused, setIsFocused] = useState<boolean>(false);
+  const [searchValue, setSearchvalue] = useState<string>('');
+
+  // TODO: show 3 the most popular products
+  const defaultMatch = data.results.slice(0, 3);
+  const [searchMatch, setSearchMatch] = useState(defaultMatch);
 
   const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -26,7 +30,12 @@ const Search = () => {
       return;
     }
 
-    const match = data.results.filter(({ name }) => name.includes(value));
+    const match = data.results.filter(({ name }) => {
+      const lowerName = name.toLowerCase();
+      const lowerValue = value.toLowerCase();
+
+      return lowerName.includes(lowerValue);
+    });
 
     setSearchMatch(match);
   };
@@ -44,7 +53,7 @@ const Search = () => {
             placeholder="Find your new bike..."
             onFocus={() => setIsFocused(true)}
             onBlur={() => setIsFocused(false)}
-            value={searchvalue}
+            value={searchValue}
             onChange={(e) => handleSearch(e)}
           />
         </InputGroup>
