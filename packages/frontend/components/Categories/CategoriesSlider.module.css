@@ -1,0 +1,25 @@
+.slider {
+  --slider-height-percentage: 50%;
+  --slider-transition-duration: 400ms;
+  --organic-arrow-thickness: 5px;
+  --organic-arrow-border-radius: 0px;
+  --organic-arrow-height: 30px;
+  --organic-arrow-color: #ffffff;
+  --control-button-width: 25%;
+  --control-button-height: 25%;
+  --control-button-background: transparent;
+  --control-bullet-color: transparent;
+  --control-bullet-active-color: transparent;
+  --loader-bar-color: transparent;
+  --loader-bar-height: 1px;
+  --content-background-color: transparent;
+  --control-button-opacity: 1;
+
+  height: 320px;
+}
+
+.stroke {
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #fff;
+  color: transparent;
+}

@@ -13,7 +13,7 @@ import { RefObject } from 'react';
 import CartButton from '../Cart/CartButton';
 import CloseButton from './CloseButton';
 import LangButton from '../Lang/LangButton';
-import CategoryTitle from '../Categories/CategoryTitle';
+import CategoryTitle from './CategoryTitle';
 import Social from '../Social/Social';
 import Link from '../Link';
 
