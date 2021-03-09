@@ -6,8 +6,8 @@ import CategoriesSlider from './CategoriesSlider';
 
 const Categories = () => {
   return (
-    <Box as="section" h="100vh" position="relative">
-      <Box position="absolute" zIndex={-1} w="100vw" h="100vh">
+    <Box as="section" position="relative">
+      <Box position="absolute" zIndex={-1} w="100vw" h="100%">
         <Image
           src="/img/Categories/Categories-1.png"
           alt=""
