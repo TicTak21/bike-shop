@@ -21,7 +21,7 @@ const Best = () => {
   };
 
   return (
-    <Box as="section">
+    <Box as="section" pb={4}>
       <Layout>
         <Title color="black">Избранные товары</Title>
         <SimpleGrid
@@ -29,7 +29,7 @@ const Best = () => {
           columns={[1, , , 2]}
           justifyContent="space-between"
           mt={8}
-          h="450px"
+          minH="450px"
         >
           <Box
             position="relative"
@@ -37,7 +37,7 @@ const Best = () => {
             bgRepeat="no-repeat"
             bgSize="cover"
             bgPosition="center"
-            h="inherit"
+            h="450px"
             transition="0.3s ease-in-out"
             _hover={{ transform: 'scale(1.03)' }}
           >
