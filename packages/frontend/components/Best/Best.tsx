@@ -83,7 +83,7 @@ const Best = () => {
             {data.small.map((el, i) => (
               <Link key={i} href={`/${el.name}`} _hover={{ transform: 'scale(1.03)' }}>
                 <Flex
-                  bg="#151515"
+                  bg="black"
                   height="100%"
                   justifyContent="center"
                   alignItems="center"

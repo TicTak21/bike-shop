@@ -2,6 +2,7 @@ import Header from '../components/Header/Header';
 import Categories from '../components/Categories/Categories';
 import Best from '../components/Best/Best';
 import MainPromo from '../components/Promo/MainPromo';
+import MainPromo2 from '../components/Promo/MainPromo2';
 import { Box, Grid } from '@chakra-ui/react';
 import Image from 'next/image';
 
@@ -20,6 +21,7 @@ export default function Home() {
         </Grid>
       </Box>
       <MainPromo />
+      <MainPromo2 />
     </>
   );
 }

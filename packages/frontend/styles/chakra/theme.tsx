@@ -13,4 +13,9 @@ export const theme = extendTheme({
     heading: "'Futura PT', sans-serif",
     body: "'Futura PT', sans-serif",
   },
+  colors: {
+    white: {
+      200: '#f2f2f2',
+    },
+  },
 });

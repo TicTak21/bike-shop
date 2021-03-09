@@ -3,8 +3,8 @@ import Layout from '../Layout';
 
 const MainPromo = () => {
   return (
-    <Box as="section">
-      <Layout bg="#F2F2F2" py={10}>
+    <Box as="section" bg="white.200">
+      <Layout py={10}>
         <Box>
           <Box>
             <Text textTransform="uppercase" fontWeight="700" display="inline" mr={1}>
