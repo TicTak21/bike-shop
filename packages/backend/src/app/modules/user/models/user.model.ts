@@ -23,13 +23,13 @@ export class UserModel {
   @Field()
   role: string;
 
-  @Field()
+  @Field({ nullable: true })
   orderId?: string;
 
-  @Field()
+  @Field({ nullable: true })
   order?: string;
 
-  @Field((type) => [String])
+  @Field((type) => [String], { nullable: true })
   userImages: string[];
 
   @Field()

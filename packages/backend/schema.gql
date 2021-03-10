@@ -27,9 +27,9 @@ type UserModel {
   createdAt: String!
   updatedAt: String!
   role: String!
-  orderId: String!
-  order: String!
-  userImages: [String!]!
+  orderId: String
+  order: String
+  userImages: [String!]
   userToken: String!
 }
 
@@ -38,4 +38,17 @@ type Query {
   user(id: String!): UserModel
   products: [ProductModel!]!
   product(id: String!): ProductModel
+}
+
+type Mutation {
+  createUser(user: CreateUserInput!): UserModel!
+}
+
+input CreateUserInput {
+  username: String
+  email: String!
+  password: String!
+  role: String!
+  order: String
+  userToken: String
 }
