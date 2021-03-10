@@ -111,28 +111,28 @@ model SubcategoryImage {
 }
 
 model User {
-  userId        String      @id @default(uuid())
-  username      String?     @db.VarChar(16)
-  email         String      @unique @db.VarChar(100)
-  password_hash String      @db.VarChar(100)
-  createdAt     DateTime    @default(now())
-  updatedAt     DateTime    @updatedAt
-  role          String      @db.VarChar(20)
-  orderId       String?     @default(uuid())
-  order         Order?      @relation(fields: [orderId], references: [orderId])
-  userImages    UserImage[]
-  userToken     UserToken?
+  userId       String      @id @default(uuid())
+  username     String?     @db.VarChar(16)
+  email        String      @unique @db.VarChar(100)
+  passwordHash String?     @db.VarChar(100)
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+  role         String      @db.VarChar(20)
+  orderId      String?     @default(uuid())
+  order        Order?      @relation(fields: [orderId], references: [orderId])
+  userImages   UserImage[]
+  userToken    UserToken?
 
   @@index([orderId], name: "fk_users_orders_idx")
 }
 
 model UserImage {
-  user_image_id String   @id @default(uuid())
-  image         String?  @db.VarChar(45)
-  createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt
-  userId        String   @default(uuid())
-  user          User     @relation(fields: [userId], references: [userId])
+  userImageId String   @id @default(uuid())
+  image       String?  @db.VarChar(45)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  userId      String   @default(uuid())
+  user        User     @relation(fields: [userId], references: [userId])
 
   @@index([userId], name: "fk_user_images_users1_idx")
 }

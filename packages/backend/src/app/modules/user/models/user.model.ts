@@ -11,8 +11,8 @@ export class UserModel {
   @Field()
   email: string;
 
-  @Field()
-  password_hash: string;
+  @Field({ nullable: true })
+  passwordHash?: string;
 
   @Field()
   createdAt: string;

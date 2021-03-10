@@ -23,7 +23,7 @@ type UserModel {
   userId: ID!
   username: String
   email: String!
-  password_hash: String!
+  passwordHash: String
   createdAt: String!
   updatedAt: String!
   role: String!
