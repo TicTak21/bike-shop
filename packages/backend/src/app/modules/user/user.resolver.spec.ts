@@ -27,6 +27,6 @@ describe('UserResolver', () => {
   it('should return array from `users`', async () => {
     const res = resolver.users();
 
-    await expect(res).resolves.toEqual([]);
+    expect(res).resolves.toBeCalledWith(expect.anything());
   });
 });
