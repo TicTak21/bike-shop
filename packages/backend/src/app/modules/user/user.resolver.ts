@@ -31,4 +31,9 @@ export class UserResolver {
 
     return await this.prisma.user.create({ data: userData });
   }
+
+  @Mutation(returns => UserModel)
+  async deleteUser(@Args('id') id: string) {
+    return await this.prisma.user.delete({ where: { userId: id } });
+  }
 }
