@@ -36,11 +36,6 @@ export class CreateUserInput {
   @MaxLength(20)
   role: string;
 
-  // @Field({ nullable: true })
-  // @IsOptional()
-  // @IsString()
-  // orderId?: string;
-
   @Field({ nullable: true })
   @IsOptional()
   @IsString()

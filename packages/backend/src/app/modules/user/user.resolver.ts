@@ -4,6 +4,7 @@ import { genSalt, genSaltSync, hash, hashSync } from 'bcryptjs';
 import { promisify } from 'util';
 import { PrismaService } from '../db/prisma/prisma.service';
 import { CreateUserInput } from './dto/create-user.input';
+import { UpdateUserInput } from './dto/update-user.input';
 import { UserModel } from './models/user.model';
 
 @Resolver(of => UserModel)
@@ -35,5 +36,13 @@ export class UserResolver {
   @Mutation(returns => UserModel)
   async deleteUser(@Args('id') id: string) {
     return await this.prisma.user.delete({ where: { userId: id } });
+  }
+
+  @Mutation(returns => UserModel)
+  async updateUser(@Args('id') id: string, @Args('user') updateUserInput: UpdateUserInput) {
+    return await this.prisma.user.update({
+      where: { userId: id },
+      data: updateUserInput,
+    });
   }
 }
