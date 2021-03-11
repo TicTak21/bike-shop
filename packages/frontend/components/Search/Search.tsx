@@ -54,7 +54,7 @@ const Search = () => {
             onFocus={() => setIsFocused(true)}
             onBlur={() => setIsFocused(false)}
             value={searchValue}
-            onChange={(e) => handleSearch(e)}
+            onChange={e => handleSearch(e)}
           />
         </InputGroup>
       </Box>

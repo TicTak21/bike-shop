@@ -2,7 +2,7 @@ import { Field, ID, ObjectType } from '@nestjs/graphql';
 
 @ObjectType()
 export class UserModel {
-  @Field((type) => ID)
+  @Field(type => ID)
   userId: string;
 
   @Field({ nullable: true })
@@ -29,7 +29,7 @@ export class UserModel {
   @Field({ nullable: true })
   order?: string;
 
-  @Field((type) => [String], { nullable: true })
+  @Field(type => [String], { nullable: true })
   userImages: string[];
 
   @Field()

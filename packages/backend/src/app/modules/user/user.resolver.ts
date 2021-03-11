@@ -6,21 +6,21 @@ import { PrismaService } from '../db/prisma/prisma.service';
 import { CreateUserInput } from './dto/create-user.input';
 import { UserModel } from './models/user.model';
 
-@Resolver((of) => UserModel)
+@Resolver(of => UserModel)
 export class UserResolver {
   constructor(private readonly prisma: PrismaService) {}
 
-  @Query((returns) => [UserModel])
+  @Query(returns => [UserModel])
   async users() {
     return await this.prisma.user.findMany();
   }
 
-  @Query((returns) => UserModel, { nullable: true })
+  @Query(returns => UserModel, { nullable: true })
   async user(@Args('id') id: string) {
     return await this.prisma.user.findUnique({ where: { userId: id } });
   }
 
-  @Mutation((returns) => UserModel)
+  @Mutation(returns => UserModel)
   async createUser(@Args('user') createUserInput: CreateUserInput) {
     const { password, ...rest } = createUserInput;
 
