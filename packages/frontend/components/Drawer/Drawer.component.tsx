@@ -1,21 +1,21 @@
 import {
   Drawer as ChakraDrawer,
   DrawerBody,
+  DrawerContent,
   DrawerFooter,
   DrawerHeader,
   DrawerOverlay,
-  DrawerContent,
-  Text,
   Flex,
   Stack,
+  Text,
 } from '@chakra-ui/react';
+import CartButton from 'components/Cart/CartButton.component';
+import CategoryTitle from 'components/Categories/CategoryTitle.component';
+import LangButton from 'components/Lang/LangButton.component';
+import Social from 'components/Social/Social.component';
+import { Link } from 'components/_shared';
 import { RefObject } from 'react';
-import CartButton from '../Cart/CartButton';
-import CloseButton from './CloseButton';
-import LangButton from '../Lang/LangButton';
-import CategoryTitle from './CategoryTitle';
-import Social from '../Social/Social';
-import Link from '../Link';
+import CloseButton from './CloseButton.component';
 
 export interface DrawerProps {
   isOpen: boolean;

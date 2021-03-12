@@ -1,5 +1,5 @@
 import { Box, Text } from '@chakra-ui/react';
-import Layout from '../Layout';
+import { Layout } from 'components/_shared';
 
 const MainPromo = () => {
   return (

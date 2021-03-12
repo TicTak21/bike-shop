@@ -1,4 +1,4 @@
-import Link from '../Link';
+import { Link } from 'components/_shared';
 
 export interface CategoryTitleProps {
   name: string;

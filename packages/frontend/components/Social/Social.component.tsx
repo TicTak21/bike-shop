@@ -1,10 +1,9 @@
 import { Stack } from '@chakra-ui/react';
-import { SiInstagram } from 'react-icons/si';
-import { ImFacebook } from 'react-icons/im';
+import { Link } from 'components/_shared';
 import { FaTelegramPlane, FaTwitter } from 'react-icons/fa';
 import { FiDribbble } from 'react-icons/fi';
-import { SiTiktok } from 'react-icons/si';
-import Link from '../Link';
+import { ImFacebook } from 'react-icons/im';
+import { SiInstagram, SiTiktok } from 'react-icons/si';
 
 const media = {
   instagram: <SiInstagram />,

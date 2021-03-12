@@ -1,9 +1,7 @@
-import Title from '../Title';
-import Layout from '../Layout';
-import { Box, Flex, Text, IconButton, Grid, SimpleGrid } from '@chakra-ui/react';
+import { Box, Flex, IconButton, SimpleGrid, Text } from '@chakra-ui/react';
+import { Layout, Link, Title } from 'components/_shared';
 import Image from 'next/image';
-import { RightArrowIcon } from '../../public/icons/Arrow/RightArrow';
-import Link from '../Link';
+import { RightArrowIcon } from 'public/icons/Arrow/RightArrow';
 
 const Best = () => {
   const data = {

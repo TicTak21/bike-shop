@@ -1,9 +1,9 @@
-import Header from '../components/Header/Header';
-import Categories from '../components/Categories/Categories';
-import Best from '../components/Best/Best';
-import MainPromo from '../components/Promo/MainPromo';
-import MainPromo2 from '../components/Promo/MainPromo2';
 import { Box, Grid } from '@chakra-ui/react';
+import Best from 'components/Best/Best.component';
+import Categories from 'components/Categories/Categories.component';
+import Header from 'components/Header/Header.component';
+import MainPromo from 'components/Promo/MainPromo.component';
+import MainPromo2 from 'components/Promo/MainPromo2.component';
 import Image from 'next/image';
 
 export default function Home() {

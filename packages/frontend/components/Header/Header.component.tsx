@@ -1,14 +1,11 @@
 import { Box, Text } from '@chakra-ui/react';
-import Nav from '../Nav';
-import Layout from '../Layout';
-import ActionButton from '../Button/ActionButton';
-import Title from '../Title';
-import Link from '../Link';
-import { useEffect, useState } from 'react';
+import ActionButton from 'components/Button/ActionButton.component';
+import { Layout, Link, Nav, Title } from 'components/_shared';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 const Header = () => {
-  const [currentItem, setCurrentItem] = useState(0);
+  const [currentItem, setCurrentItem] = useState<number>(0);
 
   const data = [
     {

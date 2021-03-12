@@ -1,6 +1,6 @@
 import { Button } from '@chakra-ui/react';
-import Link from '../Link';
-import { CartIcon } from '../../public/icons/Cart/CartIcon';
+import { Link } from 'components/_shared';
+import { CartIcon } from 'public/icons/Cart/CartIcon';
 
 export interface CardButtonProps {
   color?: string;

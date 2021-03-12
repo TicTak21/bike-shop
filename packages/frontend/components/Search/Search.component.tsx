@@ -1,7 +1,7 @@
-import { Input, InputGroup, InputLeftElement, Box } from '@chakra-ui/react';
+import { Box, Input, InputGroup, InputLeftElement } from '@chakra-ui/react';
+import { SearchIcon } from 'public/icons/Search/SearchIcon';
 import { ChangeEvent, useState } from 'react';
-import { SearchIcon } from '../../public/icons/Search/SearchIcon';
-import SearchItem from './SearchItem';
+import SearchItem from './SearchItem.component';
 
 const Search = () => {
   const data = {

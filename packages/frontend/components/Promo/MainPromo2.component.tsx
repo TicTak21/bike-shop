@@ -1,5 +1,5 @@
-import { Box, Text, SimpleGrid, Flex } from '@chakra-ui/react';
-import Layout from '../Layout';
+import { Box, Flex, SimpleGrid, Text } from '@chakra-ui/react';
+import { Layout } from 'components/_shared';
 import Image from 'next/image';
 
 const MainPromo2 = () => {

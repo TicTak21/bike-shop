@@ -1,8 +1,8 @@
-import '../styles/globals.css';
 import { ChakraProvider } from '@chakra-ui/react';
-import { theme } from '../styles/chakra/theme';
-import { Fonts } from '../styles/chakra/fonts';
 import Head from 'next/head';
+import { Fonts } from 'styles/chakra/fonts';
+import { theme } from 'styles/chakra/theme';
+import 'styles/globals.css';
 
 function MyApp({ Component, pageProps }) {
   return (

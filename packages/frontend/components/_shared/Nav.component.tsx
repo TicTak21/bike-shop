@@ -1,10 +1,10 @@
 import { Flex, useDisclosure } from '@chakra-ui/react';
-import Logo from './Logo';
-import Search from './Search/Search';
-import Drawer from './Drawer/Drawer';
-import CartButton from './Cart/CartButton';
-import MenuButton from './Drawer/MenuButton';
+import CartButton from 'components/Cart/CartButton.component';
+import Drawer from 'components/Drawer/Drawer.component';
+import MenuButton from 'components/Drawer/MenuButton.component';
+import Search from 'components/Search/Search.component';
 import { useRef } from 'react';
+import Logo from './Logo.component';
 
 export interface NavProps {}
 

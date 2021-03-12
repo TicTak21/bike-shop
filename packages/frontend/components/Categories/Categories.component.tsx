@@ -1,7 +1,6 @@
 import { Box, Grid } from '@chakra-ui/react';
-import Layout from '../Layout';
-import Title from '../Title';
-import CategoriesSlider from './CategoriesSlider';
+import { Layout, Title } from 'components/_shared';
+import CategoriesSlider from './CategoriesSlider/CategoriesSlider.component';
 
 const Categories = () => {
   return (

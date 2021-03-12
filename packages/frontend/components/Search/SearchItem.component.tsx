@@ -1,5 +1,5 @@
-import { Box, Text, Flex, Image } from '@chakra-ui/react';
-import Link from '../Link';
+import { Box, Flex, Image, Text } from '@chakra-ui/react';
+import { Link } from 'components/_shared';
 
 interface SearchItemProps {
   name?: string;

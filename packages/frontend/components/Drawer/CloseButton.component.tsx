@@ -1,5 +1,5 @@
 import { IconButton } from '@chakra-ui/react';
-import { CloseIcon } from '../../public/icons/Close/CloseIcon';
+import { CloseIcon } from 'public/icons/Close/CloseIcon';
 
 export interface CloseButtonProps {
   color?: string;

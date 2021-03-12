@@ -1,6 +1,6 @@
-import { MutableRefObject } from 'react';
 import { IconButton } from '@chakra-ui/react';
-import { MenuIcon } from '../../public/icons/Menu/MenuIcon';
+import { MenuIcon } from 'public/icons/Menu/MenuIcon';
+import { MutableRefObject } from 'react';
 
 export interface MenuButtonProps {
   color?: string;

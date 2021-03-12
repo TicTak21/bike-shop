@@ -1,14 +1,9 @@
+import { Box, Text } from '@chakra-ui/react';
+import { Link } from 'components/_shared';
+import Image from 'next/image';
 import AwesomeSlider from 'react-awesome-slider';
-
-// === HACK: ===
-// seems like if you change the order of the imports below you broke the styles of the slider :)
 import 'react-awesome-slider/dist/styles.css';
 import styles from './CategoriesSlider.module.css';
-// === / HACK: ===
-
-import { Box, Text } from '@chakra-ui/react';
-import Link from '../Link';
-import Image from 'next/image';
 
 const CategoriesSlider = () => {
   const data = [
