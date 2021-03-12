@@ -1,4 +1,4 @@
-import { Resolver, Query, Args } from '@nestjs/graphql';
+import { Args, Query, Resolver } from '@nestjs/graphql';
 import { PrismaService } from '../db/prisma/prisma.service';
 import { ProductModel } from './models/product.model';
 

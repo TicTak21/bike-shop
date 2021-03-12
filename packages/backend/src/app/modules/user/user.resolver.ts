@@ -1,7 +1,5 @@
-import { InternalServerErrorException } from '@nestjs/common';
-import { Resolver, Query, Args, Mutation } from '@nestjs/graphql';
-import { genSalt, genSaltSync, hash, hashSync } from 'bcryptjs';
-import { promisify } from 'util';
+import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
+import { genSaltSync, hashSync } from 'bcryptjs';
 import { PrismaService } from '../db/prisma/prisma.service';
 import { CreateUserInput } from './dto/create-user.input';
 import { UpdateUserInput } from './dto/update-user.input';
