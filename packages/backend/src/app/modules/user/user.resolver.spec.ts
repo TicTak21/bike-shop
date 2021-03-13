@@ -46,12 +46,20 @@ describe('UserResolver', () => {
     await resolver.deleteUser(user.userId);
   });
 
+  it('should delete user via `deleteUser`', async () => {
+    const user = await resolver.createUser(mockUser);
+    await resolver.deleteUser(user.userId);
+
+    const possibleDeletedUser = await resolver.user(user.userId);
+
+    expect(possibleDeletedUser).toBeNull();
+  });
+
   it('should update user via `updateUser`', async () => {
     const user = await resolver.createUser(mockUser);
 
     const mockUpdateUser: UpdateUserInput = {
       email: 'update_test_user@mail.com',
-      passwordHash: '',
     };
 
     const updatedUser = await resolver.updateUser(user.userId, mockUpdateUser);

@@ -58,6 +58,6 @@ input CreateUserInput {
 input UpdateUserInput {
   username: String
   email: String
+  password: String
   role: String
-  passwordHash: String
 }
