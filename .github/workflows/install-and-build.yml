@@ -38,3 +38,5 @@ jobs:
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           files: bike-shop/packages/backend/coverage/clover.xml
+
+      - run: yarn docs:gen
