@@ -4,7 +4,7 @@
   "scripts": {
     "dev:front": "yarn workspace frontend dev",
     "dev:back": "yarn workspace backend start:dev",
-    "docs:gen": "compodoc --port 8080 -p tsconfig.json -d ./docs -n 'bike-shop'",
+    "docs:gen": "compodoc -p tsconfig.json -d ./docs -n 'bike-shop' --theme Stripe",
     "docs:serve": "yarn docs:gen && yarn compodoc -s"
   },
   "devDependencies": {
