@@ -1,4 +1,4 @@
-# Bike-shop backend
+# Bike-shop frontend
 
 ![](https://img.shields.io/github/checks-status/TicTak21/bike-shop/dev?label=build)
 

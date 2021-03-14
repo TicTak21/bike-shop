@@ -5,7 +5,7 @@ import { DbModule } from './modules/db/db.module';
 import { GqlModule } from './modules/gql/gql.module';
 import { ProductModule } from './modules/product/product.module';
 import { UserModule } from './modules/user/user.module';
-import { LoggingInterceptor } from './shared/interceptors/logging.interceptor';
+import { LoggingInterceptor } from './shared/interceptors/logging/logging.interceptor';
 
 @Module({
   imports: [DbModule, GqlModule, AuthModule, UserModule, ProductModule],
