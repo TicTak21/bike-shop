@@ -3,9 +3,12 @@
   "private": true,
   "scripts": {
     "dev:front": "yarn workspace frontend dev",
-    "dev:back": "yarn workspace backend start:dev"
+    "dev:back": "yarn workspace backend start:dev",
+    "docs:gen": "compodoc --port 8080 -p tsconfig.json -d ./docs -n 'bike-shop'",
+    "docs:serve": "yarn docs:gen && yarn compodoc -s"
   },
   "devDependencies": {
+    "@compodoc/compodoc": "^1.1.11",
     "husky": "^4.3.8",
     "lerna": "^3.20.2"
   },
